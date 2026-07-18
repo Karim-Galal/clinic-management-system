@@ -18,6 +18,25 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+
+            // Professional Information
+            $table->string('title')->nullable();
+            $table->string('phone')->unique();
+            $table->string('professional_title')->nullable();
+            $table->text('bio')->nullable();
+            $table->string('profile_photo_path')->nullable();
+            // Employment status
+            $table->enum('employment_status', [
+                'active',
+                'probation',
+                'inactive',
+                'suspended',
+                'resigned',
+                'retired',
+            ])->default('active');
+
+            $table->decimal('salary', 10, 2)->nullable();
+
             $table->timestamps();
         });
 
