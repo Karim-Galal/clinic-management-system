@@ -1,8 +1,8 @@
-import authService from "../services/authService";
-
 import { create } from "zustand";
 
-const useAuthStore = create((set) => ({
+import authService from "../services/authService";
+
+const useAuthStore = create((set, get) => ({
 
     user: null,
 
@@ -10,30 +10,92 @@ const useAuthStore = create((set) => ({
 
     loading: false,
 
-    errors: null,
+    errors: {},
 
     setLoading: (loading) => set({ loading }),
 
-    clearErrors: () => set({ errors: null }),
+    clearErrors: () => set({ errors: {} }),
+
+    // Authentication
 
     fetchUser: async () => {
-      
-        set({ loading: true });
+
+        set({
+            loading: true,
+            errors: {},
+        });
 
         try {
+
             const response = await authService.getUser();
 
             set({
                 user: response.data,
                 isAuthenticated: true,
                 loading: false,
-                errors: null,
+                errors: {},
             });
+
+            return response.data;
+
         } catch (error) {
+
             set({
                 user: null,
                 isAuthenticated: false,
                 loading: false,
+                errors: error.response?.data?.errors ?? {},
+            });
+
+            return null;
+        }
+    },
+
+    login: async (credentials) => {
+
+        set({
+            loading: true,
+            errors: {},
+        });
+
+        try {
+
+            await authService.login(credentials);
+
+            await get().fetchUser();
+
+            return true;
+
+        } catch (error) {
+
+            set({
+                user: null,
+                isAuthenticated: false,
+                loading: false,
+                errors: error.response?.data?.errors ?? {},
+            });
+
+            return false;
+        }
+    },
+
+    logout: async () => {
+
+        set({
+            loading: true,
+        });
+
+        try {
+
+            await authService.logout();
+
+        } finally {
+
+            set({
+                user: null,
+                isAuthenticated: false,
+                loading: false,
+                errors: {},
             });
         }
     },
