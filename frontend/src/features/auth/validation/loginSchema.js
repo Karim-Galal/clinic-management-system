@@ -1,13 +1,12 @@
 import { z } from "zod";
 
-const loginSchema = z.object({
-    email: z
-        .string()
-        .email("Please enter a valid email address."),
+export const loginSchema = (t) =>
+    z.object({
+        email: z
+            .email(t("validation:email"))
+            .min(1, t("validation:required")),
 
-    password: z
-        .string()
-        .min(8, "Password must be at least 8 characters."),
-});
-
-export default loginSchema;
+        password: z
+            .string()
+            .min(8, t("validation:password_min")),
+    });

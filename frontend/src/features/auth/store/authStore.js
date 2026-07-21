@@ -11,6 +11,8 @@ const useAuthStore = create((set, get) => ({
     loading: false,
 
     errors: {},
+    
+    message: null,
 
     setLoading: (loading) => set({ loading }),
 

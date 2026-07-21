@@ -1,0 +1,23 @@
+@layer components {
+
+    .card {
+        @apply rounded-lg
+               border
+               border-border
+               bg-surface
+               shadow-sm;
+    }
+
+    .card-header {
+        @apply p-6 border-b border-border;
+    }
+
+    .card-body {
+        @apply p-6;
+    }
+
+    .card-footer {
+        @apply p-6 border-t border-border;
+    }
+
+}

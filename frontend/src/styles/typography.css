@@ -1,0 +1,57 @@
+@layer components {
+
+    /* ==========================================================
+       Headings
+    ========================================================== */
+
+    .heading-1 {
+        @apply text-4xl font-bold leading-tight;
+    }
+
+    .heading-2 {
+        @apply text-3xl font-semibold leading-tight;
+    }
+
+    .heading-3 {
+        @apply text-2xl font-semibold leading-normal;
+    }
+
+    .heading-4 {
+        @apply text-xl font-medium leading-normal;
+    }
+
+    /* ==========================================================
+       Body
+    ========================================================== */
+
+    .body-lg {
+        @apply text-lg font-normal leading-relaxed;
+    }
+
+    .body {
+        @apply text-base font-normal leading-normal;
+    }
+
+    .body-sm {
+        @apply text-sm font-normal leading-normal;
+    }
+
+    /* ==========================================================
+       Supporting Text
+    ========================================================== */
+
+    .label {
+        @apply text-sm font-medium leading-normal;
+    }
+
+    .caption {
+        @apply text-xs font-normal leading-normal;
+        color: var(--color-muted-foreground);
+    }
+
+    .overline {
+        @apply text-xs font-semibold uppercase tracking-wider leading-normal;
+        color: var(--color-muted-foreground);
+    }
+
+}

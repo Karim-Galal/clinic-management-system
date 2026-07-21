@@ -1,0 +1,19 @@
+@layer components {
+
+    .form-field {
+        @apply space-y-1;
+    }
+
+    .form-group {
+        @apply space-y-4;
+    }
+
+    .form-actions {
+        @apply flex justify-end gap-2;
+    }
+
+    .form-divider {
+        @apply border-border border-t;
+    }
+
+}

@@ -1,98 +1,136 @@
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-import { useNavigate } from "react-router-dom";
-
-import loginSchema from "../validation/loginSchema";
+import { useTranslation } from "react-i18next";
 
 import useAuthStore from "../store/authStore";
-import { useEffect } from "react";
+import { loginSchema } from "../validation/loginSchema";
+
+import Button from "@/shared/components/Button";
+import Input from "@/shared/components/Input";
+import Card from "@/shared/components/Card";
+import Alert from "@/shared/components/Alert";
+
+
 
 function LoginPage() {
-
     const navigate = useNavigate();
+
+    const { t } = useTranslation();
 
     const {
         login,
         loading,
         errors,
-        user,
+        message,
+        clearErrors,
     } = useAuthStore();
-    
-
-    useEffect(() => {
-        console.log('-----------')
-        console.log(user);
-    }, [user]);
-
 
     const {
         register,
         handleSubmit,
-        formState: {
-            errors: formErrors,
-        },
+        formState: { errors: formErrors },
     } = useForm({
-        resolver: zodResolver(loginSchema),
+        resolver: zodResolver(loginSchema(t)),
     });
 
     const onSubmit = async (data) => {
+        clearErrors();
 
         const success = await login(data);
 
         if (success) {
             navigate("/dashboard");
         }
-
-        
-
     };
 
+    const { i18n } = useTranslation();
+
     return (
-
-        <form onSubmit={handleSubmit(onSubmit)}>
-
-            <div>
-
-                <label>Email</label>
-
-                <input
-                    type="email"
-                    {...register("email")}
-                />
-
-                <p>{formErrors.email?.message}</p>
-
-                <p>{errors.email?.[0]}</p>
-
-            </div>
-
-            <div>
-
-                <label>Password</label>
-
-                <input
-                    type="password"
-                    {...register("password")}
-                />
-
-                <p>{formErrors.password?.message}</p>
-
-                <p>{errors.password?.[0]}</p>
-
-            </div>
-
+      <>
+          {/* ====== */}
+          <div className="flex justify-end gap-2 mb-4">
             <button
-                type="submit"
-                disabled={loading}
+                type="button"
+                onClick={() => i18n.changeLanguage("en")}
             >
-                {loading ? "Loading..." : "Login"}
+                EN
             </button>
 
-        </form>
+            <button
+                type="button"
+                onClick={() => i18n.changeLanguage("ar")}
+            >
+                AR
+            </button>
+        </div>
+          {/* ====== */}
+        <main className="container flex min-h-dvh items-center justify-center">
+          
 
+            <Card className="w-full max-w-md md:p-3 p-6 ">
+
+                <div className="space-y-2 text-center">
+
+                    <h1 className="heading-2">
+                        {t("auth:welcome_back")}
+                    </h1>
+
+                    <p className="body-sm text-muted-foreground">
+                        {t("auth:login_description")}
+                    </p>
+
+                </div>
+
+                <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="mt-8 space-y-5"
+                >
+
+                    {message && (
+                        <Alert>
+                            {message}
+                        </Alert>
+                    )}
+
+                    <Input
+                        label={t("auth:email")}
+                        type="email"
+                        placeholder={t("auth:email_placeholder")}
+                        error={
+                            formErrors.email?.message ||
+                            errors.email?.[0]
+                        }
+                        {...register("email")}
+                    />
+
+                    <Input
+                        label={t("auth:password")}
+                        type="password"
+                        placeholder={t("auth:password_placeholder")}
+                        error={
+                            formErrors.password?.message ||
+                            errors.password?.[0]
+                        }
+                        {...register("password")}
+                    />
+
+                    <Button
+                        type="submit"
+                        loading={loading}
+                        loadingText={t("auth:signing_in")}
+                        className="w-full"
+                    >
+                        {t("auth:login")}
+                    </Button>
+
+                </form>
+
+            </Card>
+
+        </main>
+      </>
     );
-
 }
 
 export default LoginPage;
