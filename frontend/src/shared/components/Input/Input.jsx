@@ -1,35 +1,114 @@
+import { forwardRef } from "react";
 import clsx from "clsx";
 
-function Input({
+const Input = forwardRef(
+(
+{
     label,
     error,
-    className = "",
+
+    leftIcon,
+    rightIcon,
+    onRightIconClick,
+
+    className,
+
     ...props
-}) {
+},
+ref
+) => {
+
     return (
-        <div className="space-y-1">
+
+        <div className="form-field">
+
             {label && (
+
                 <label className="label">
+
                     {label}
+
                 </label>
+
             )}
 
-            <input
-                className={clsx(
-                    "input",
-                    error && "input-error",
-                    className
+            <div className="relative">
+
+                {/* Left Icon */}
+
+                {leftIcon && (
+
+                    <div
+                        className="
+                            absolute
+                            inset-s-3
+                            top-1/2
+                            -translate-y-1/2
+                            text-muted-foreground
+                            pointer-events-none
+                        "
+                    >
+                        {leftIcon}
+                    </div>
+
                 )}
-                {...props}
-            />
+
+                <input
+                    ref={ref}
+                    className={clsx(
+                        "input input-default",
+
+                        leftIcon && "ps-10",
+
+                        rightIcon && "pe-10",
+
+                        error && "input-error",
+
+                        className
+                    )}
+                    {...props}
+                />
+
+                {/* Right Icon */}
+
+                {rightIcon && (
+
+                    <button
+                        type="button"
+                        onClick={onRightIconClick}
+                        className="
+                            absolute
+                            inset-e-3
+                            top-1/2
+                            -translate-y-1/2
+                            text-muted-foreground
+                            hover:text-primary
+                            transition-colors
+                        "
+                    >
+                        {rightIcon}
+                    </button>
+
+                )}
+
+            </div>
 
             {error && (
-                <p className="caption text-danger">
+
+                <p className="text-sm text-danger">
+
                     {error}
+
                 </p>
+
             )}
+
         </div>
+
     );
-}
+
+});
+
+Input.displayName = "Input";
 
 export default Input;

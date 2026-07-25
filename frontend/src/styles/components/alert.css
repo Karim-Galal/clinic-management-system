@@ -8,10 +8,15 @@
             text-sm;
     }
 
-    .alert-danger {
-        @apply border-danger
-            bg-danger/10
-            text-danger;
+    .alert-danger{
+        @apply
+        rounded-xl
+        border
+        border-danger/20
+        bg-danger/10
+        text-danger
+        px-4
+        py-3;
     }
 
     .alert-success {

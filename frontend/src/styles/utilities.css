@@ -9,4 +9,12 @@
             lg:px-8;
     }
 
+    /* .focus-brand {
+        @apply 
+            focus:outline-none
+            focus:border-primary
+            focus:ring-4
+            focus:ring-primary-500/20;
+    } */
+
 }

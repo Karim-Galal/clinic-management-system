@@ -8,6 +8,10 @@ import arAuth from "@/locales/ar/auth.json";
 import enValidation from "@/locales/en/validation.json";
 import arValidation from "@/locales/ar/validation.json";
 
+import enErrors from "@/locales/en/errors.json";
+import arErrors from "@/locales/ar/errors.json";
+
+
 i18n
     .use(LanguageDetector)
     .use(initReactI18next)
@@ -24,11 +28,13 @@ i18n
             en: {
                 auth: enAuth,
                 validation: enValidation,
+                errors: enErrors
             },
 
             ar: {
                 auth: arAuth,
                 validation: arValidation,
+                errors: arErrors,
             },
         },
     });

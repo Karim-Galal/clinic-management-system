@@ -1,0 +1,11 @@
+{
+  "offline": "No internet connection.",
+  "server_unreachable": "Server unavailable.",
+  "server_error": "Server error.",
+  "invalid_credentials": "Incorrect email or password.",
+  "unauthorized": "Unauthorized.",
+  "forbidden": "Access denied.",
+  "not_found": "Not found.",
+  "unknown": "Unexpected error.",
+  "session_expired": "Session expired."
+}

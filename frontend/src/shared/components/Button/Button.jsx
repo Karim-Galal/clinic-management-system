@@ -1,5 +1,7 @@
 import clsx from "clsx";
 
+import Spinner from "../Spinner/Spinner";
+
 function Button({
     children,
 
@@ -22,7 +24,19 @@ function Button({
             className={clsx("btn btn-primary", className)}
             {...props}
         >
-            {loading ? loadingText : children}
+            {/* {loading ? loadingText : children} */}
+            {
+              loading
+                  ?
+                  <>
+                      <Spinner />
+
+                      {loadingText}
+                  </>
+                  :
+
+                  children
+            }
         </button>
     );
 }

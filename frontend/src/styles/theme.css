@@ -6,7 +6,9 @@
 
 @theme {
 
-    /* Fonts */
+  /* ==================================================
+  Fonts
+  ================================================== */
 
     --font-sans:
         "Inter",
@@ -19,8 +21,26 @@
         monospace;
 
 
+  /* ==================================================
+    Brand Palette
+  ================================================== */
 
-    /* Brand */
+    --color-primary-50:  #F2FFFB;
+    --color-primary-100: #D8FFF4;
+    --color-primary-200: #B2FFE6;
+    --color-primary-300: #7FF3D1;
+    --color-primary-400: #3AD8B4;
+    --color-primary-500: #00A385;
+    --color-primary-600: #009477;
+    --color-primary-700: #007E66;
+    --color-primary-800: #005F4D;
+    --color-primary-900: #003126;
+    --color-primary-950: #001F17;
+
+
+  /* ==================================================
+    Semantic Colors
+  ================================================== */
 
     --color-primary: var(--primary);
     --color-primary-foreground: var(--primary-foreground);
@@ -30,10 +50,6 @@
 
     --color-accent: var(--accent);
     --color-accent-foreground: var(--accent-foreground);
-
-
-
-    /* Application */
 
     --color-background: var(--background);
 
@@ -49,10 +65,6 @@
 
     --color-ring: var(--ring);
 
-
-
-    /* Status */
-
     --color-success: var(--success);
     --color-success-foreground: var(--success-foreground);
 
@@ -66,53 +78,58 @@
     --color-info-foreground: var(--info-foreground);
 
 
+  /* ==================================================
+    Radius
+  ================================================== */
 
-    /* Radius */
-
-    --radius-xs:4px;
-    --radius-sm:6px;
-    --radius-md:8px;
-    --radius-lg:12px;
-    --radius-xl:16px;
-    --radius-full:9999px;
-
-
-
-    /* Shadows */
-
-    --shadow-xs:0 1px 2px rgb(0 0 0 / .05);
-    --shadow-sm:0 1px 3px rgb(0 0 0 / .10);
-    --shadow-md:0 4px 6px rgb(0 0 0 / .10);
-    --shadow-lg:0 10px 15px rgb(0 0 0 / .10);
-    --shadow-xl:0 20px 25px rgb(0 0 0 / .12);
+    --radius-xs: 4px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
 
 
+  /* ==================================================
+    Shadows
+  ================================================== */
 
-    /* Animation */
-
-    --ease-default:cubic-bezier(.4,0,.2,1);
-
-    --duration-fast:150ms;
-    --duration-normal:200ms;
-    --duration-slow:300ms;
-
-
-
-    /* Z-index */
-
-    --z-dropdown:1000;
-    --z-sticky:1020;
-    --z-fixed:1030;
-    --z-modal:1040;
-    --z-popover:1050;
-    --z-tooltip:1060;
+    --shadow-xs: 0 1px 2px rgb(0 0 0 / .05);
+    --shadow-sm: 0 1px 3px rgb(0 0 0 / .10);
+    --shadow-md: 0 4px 6px rgb(0 0 0 / .10);
+    --shadow-lg: 0 10px 15px rgb(0 0 0 / .10);
+    --shadow-xl: 0 20px 25px rgb(0 0 0 / .12);
 
 
-    /*  ===== Typography =====  */
-    /* Font Sizes */
+  /* ==================================================
+    Animation
+  ================================================== */
 
-    --text-xs: 0.75rem;
-    --text-sm: 0.875rem;
+    --ease-default: cubic-bezier(.4,0,.2,1);
+
+    --duration-fast: 150ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+
+
+  /* ==================================================
+    Z-index
+  ================================================== */
+
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal: 1040;
+    --z-popover: 1050;
+    --z-tooltip: 1060;
+
+
+  /* ==================================================
+    Typography
+  ================================================== */
+
+    --text-xs: .75rem;
+    --text-sm: .875rem;
     --text-base: 1rem;
     --text-lg: 1.125rem;
     --text-xl: 1.25rem;
@@ -120,15 +137,11 @@
     --text-3xl: 1.875rem;
     --text-4xl: 2.25rem;
 
-    /* Font Weights */
-
     --font-light: 300;
     --font-normal: 400;
     --font-medium: 500;
     --font-semibold: 600;
     --font-bold: 700;
-
-    /* Line Heights */
 
     --leading-tight: 1.2;
     --leading-normal: 1.5;
@@ -139,80 +152,76 @@
  Light Theme
 ==================================================*/
 
-:root{
+:root {
 
-    --primary:#2563EB;
-    --primary-foreground:#FFFFFF;
+    --primary: var(--color-primary-600);
+    --primary-foreground: #FFFFFF;
 
-    --secondary:#F1F5F9;
-    --secondary-foreground:#0F172A;
+    --accent: var(--color-primary-100);
+    --accent-foreground: var(--color-primary-900);
 
-    --accent:#DBEAFE;
-    --accent-foreground:#1E3A8A;
+    --background: #F5F7F8;
 
-    --background:#F8FAFC;
+    --surface: #FFFFFF;
+    --surface-foreground: #191B1C;
 
-    --surface:#FFFFFF;
-    --surface-foreground:#0F172A;
+    --border: #EDEFF0;
 
-    --muted:#F1F5F9;
-    --muted-foreground:#64748B;
+    --input: #EDEFF0;
 
-    --border:#E2E8F0;
+    --muted: #F6F7F7;
+    --muted-foreground: #7B8285;
 
-    --input:#E2E8F0;
+    --ring: var(--color-primary-400);
 
-    --ring:#3B82F6;
+    --success: #16A34A;
+    --success-foreground: #FFFFFF;
 
-    --success:#16A34A;
-    --success-foreground:#FFFFFF;
+    --warning: #F59E0B;
+    --warning-foreground: #FFFFFF;
 
-    --warning:#F59E0B;
-    --warning-foreground:#FFFFFF;
+    --danger: #DC2626;
+    --danger-foreground: #FFFFFF;
 
-    --danger:#DC2626;
-    --danger-foreground:#FFFFFF;
-
-    --info:#0EA5E9;
-    --info-foreground:#FFFFFF;
-
+    --info: #0EA5E9;
+    --info-foreground: #FFFFFF;
 }
 
-.dark{
+/*==================================================
+ Dark Theme
+==================================================*/
 
-    --primary:#3B82F6;
-    --primary-foreground:#FFFFFF;
+.dark {
 
-    --secondary:#1E293B;
-    --secondary-foreground:#F8FAFC;
+    --primary: var(--color-primary-500);
+    --primary-foreground: #FFFFFF;
 
-    --accent:#1D4ED8;
-    --accent-foreground:#FFFFFF;
+    --accent: #00493A;
+    --accent-foreground: #FFFFFF;
 
-    --background:#0F172A;
+    --background: #001F17;
 
-    --surface:#1E293B;
-    --surface-foreground:#F8FAFC;
+    --surface: #003126;
+    --surface-foreground: #FFFFFF;
 
-    --muted:#334155;
-    --muted-foreground:#CBD5E1;
+    --border: #00493A;
 
-    --border:#334155;
+    --input: #00493A;
 
-    --input:#334155;
+    --muted: #004435;
+    --muted-foreground: #C2C9CC;
 
-    --ring:#60A5FA;
+    --ring: var(--color-primary-300);
 
-    --success:#22C55E;
-    --success-foreground:#FFFFFF;
+    --success: #22C55E;
+    --success-foreground: #FFFFFF;
 
-    --warning:#FBBF24;
-    --warning-foreground:#111827;
+    --warning: #FBBF24;
+    --warning-foreground: #111827;
 
-    --danger:#EF4444;
-    --danger-foreground:#FFFFFF;
+    --danger: #EF4444;
+    --danger-foreground: #FFFFFF;
 
-    --info:#38BDF8;
-    --info-foreground:#FFFFFF;
-
+    --info: #38BDF8;
+    --info-foreground: #FFFFFF;
 }

@@ -2,24 +2,22 @@ import api from "@/app/api/axios";
 
 const authService = {
     async getCsrfCookie() {
-        console.log("Getting CSRF cookie...")
+      
         // return api.get("/sanctum/csrf-cookie");
+
         const response = await api.get("/sanctum/csrf-cookie");
-        console.log("CSRF cookie received");
 
         return response;
     },
 
+
     async login(data) {
-        console.log("Login started");
 
         await this.getCsrfCookie();
 
-        console.log("Sending login request");
+        const response = await api.post("/login", data);
 
-
-        return api.post("/login", data);
-
+        return response;
     },
 
     async getUser() {
