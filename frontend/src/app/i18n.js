@@ -11,6 +11,15 @@ import arValidation from "@/locales/ar/validation.json";
 import enErrors from "@/locales/en/errors.json";
 import arErrors from "@/locales/ar/errors.json";
 
+import enNavigation from "@/locales/en/navigation.json";
+import arNavigation from "@/locales/ar/navigation.json";
+
+import enCommon from "@/locales/en/common.json";
+import arCommon from "@/locales/ar/common.json";
+
+import enDashboard from "@/locales/en/dashboard.json";
+import arDashboard from "@/locales/ar/dashboard.json";
+
 
 i18n
     .use(LanguageDetector)
@@ -28,13 +37,19 @@ i18n
             en: {
                 auth: enAuth,
                 validation: enValidation,
-                errors: enErrors
+                errors: enErrors,
+                navigation: enNavigation,
+                common: enCommon,
+                dashboard: enDashboard,
             },
 
             ar: {
                 auth: arAuth,
                 validation: arValidation,
                 errors: arErrors,
+                navigation: arNavigation,
+                common: arCommon,
+                dashboard: arDashboard,
             },
         },
     });

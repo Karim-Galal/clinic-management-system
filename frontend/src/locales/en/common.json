@@ -6,5 +6,8 @@
   "search": "Search",
   "loading": "Loading...",
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+
+  "app_name": "ClinicFlow",
+  "app_description": "Clinic Management System"
 }

@@ -77,6 +77,9 @@
     --color-info: var(--info);
     --color-info-foreground: var(--info-foreground);
 
+    
+    --color-sidebar-active: var(--sidebar-active);
+    --color-sidebar-active-foreground: var(--sidebar-active-foreground);
 
   /* ==================================================
     Radius
@@ -185,13 +188,17 @@
 
     --info: #0EA5E9;
     --info-foreground: #FFFFFF;
+
+
+    --sidebar-active: var(--color-primary-100);
+    --sidebar-active-foreground: var(--color-primary-700);
 }
 
 /*==================================================
  Dark Theme
 ==================================================*/
 
-.dark {
+[data-theme="dark"] {
 
     --primary: var(--color-primary-500);
     --primary-foreground: #FFFFFF;
@@ -199,16 +206,21 @@
     --accent: #00493A;
     --accent-foreground: #FFFFFF;
 
-    --background: #001F17;
+    /* --background: #001F17; */
+    --background: #071B1A;
 
-    --surface: #003126;
+
+    /* --surface: #003126; */
+    --surface: #102928;
+
     --surface-foreground: #FFFFFF;
 
     --border: #00493A;
 
     --input: #00493A;
 
-    --muted: #004435;
+    /* --muted: #004435; */
+    --muted: #173532;
     --muted-foreground: #C2C9CC;
 
     --ring: var(--color-primary-300);
@@ -224,4 +236,8 @@
 
     --info: #38BDF8;
     --info-foreground: #FFFFFF;
+
+
+    --sidebar-active: #0F4D43;
+    --sidebar-active-foreground: #7FF3D1;
 }

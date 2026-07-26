@@ -8,6 +8,7 @@ import LoginForm from "../components/LoginForm"
 
 function LoginPage() {
 
+
     return (
       <>
         <main className="min-h-dvh bg-linear-to-br from-background via-background to-primary-50">

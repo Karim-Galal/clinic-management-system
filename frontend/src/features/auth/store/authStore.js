@@ -82,6 +82,8 @@ const useAuthStore = create((set, get) => {
 
         isAuthenticated: false,
 
+        initialized: false,
+
         loading: false,
 
         errors: {},
@@ -109,6 +111,7 @@ const useAuthStore = create((set, get) => {
                 messageType: null,
             });
 
+
             try {
 
                 const response = await authService.getUser();
@@ -118,6 +121,8 @@ const useAuthStore = create((set, get) => {
                     user: response.data,
 
                     isAuthenticated: true,
+
+                    initialized: true,
 
                     loading: false,
 
@@ -129,11 +134,19 @@ const useAuthStore = create((set, get) => {
 
                 });
 
+
                 return response.data;
 
             } catch (error) {
 
-                set(handleError(error));
+                // set(handleError(error));
+                set({
+
+                    ...handleError(error),
+
+                    initialized: true,
+
+                });
 
                 return null;
 
@@ -194,6 +207,8 @@ const useAuthStore = create((set, get) => {
                     user: null,
 
                     isAuthenticated: false,
+
+                    initialized: true,
 
                     loading: false,
 

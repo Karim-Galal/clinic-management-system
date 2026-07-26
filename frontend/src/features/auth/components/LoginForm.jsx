@@ -25,6 +25,7 @@ import Alert from "@/shared/components/Alert";
 
 function LoginForm() {
 
+
     const navigate = useNavigate();
 
     const { t } = useTranslation();
@@ -58,7 +59,7 @@ function LoginForm() {
         console.log(success);
 
         if (success) {
-            navigate("/dashboard");
+            navigate("/staff/dashboard", { replace: true });
         }
     };
 
