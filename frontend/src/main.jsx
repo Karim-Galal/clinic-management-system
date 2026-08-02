@@ -6,6 +6,7 @@ import AuthBootstrap from "@/app/router/AuthBootstrap";
 
 import "@/app/i18n";
 import useThemeStore from "@/app/store/themeStore";
+import useLanguageStore from "@/app/store/languageStore";
 
 
 
@@ -13,6 +14,8 @@ import useThemeStore from "@/app/store/themeStore";
 import "@/styles/index.css";
 
 useThemeStore.getState().initializeTheme();
+useLanguageStore.getState().initializeLanguage();
+
 
 createRoot(document.getElementById('root')).render(
   

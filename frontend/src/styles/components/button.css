@@ -10,8 +10,6 @@
 
         rounded-xl
 
-        px-5
-        py-3
 
         font-medium
 
@@ -20,6 +18,35 @@
 
         disabled:pointer-events-none
         disabled:opacity-60;
+
+    }
+
+    .btn-sm {
+
+        @apply
+
+        px-3
+        py-2
+        text-sm;
+
+    }
+
+    .btn-md {
+
+        @apply
+
+        px-5
+        py-3;
+
+    }
+
+    .btn-lg {
+
+        @apply
+
+        px-6
+        py-3.5
+        text-lg;
 
     }
 
@@ -42,10 +69,16 @@
     .btn-secondary {
 
         @apply
+
         bg-secondary
         text-secondary-foreground
 
-        hover:bg-muted;
+        border
+        border-border
+
+        hover:bg-muted
+
+        active:scale-[0.98];
 
     }
 
@@ -62,7 +95,21 @@
     }
 
     .btn-danger {
-        @apply bg-danger text-danger-foreground hover:opacity-90;
+
+        @apply
+
+        bg-danger
+        text-danger-foreground
+
+        shadow-md
+
+        hover:-translate-y-0.5
+        hover:shadow-lg
+        hover:brightness-110
+
+        active:translate-y-0
+        active:shadow-md;
+
     }
 
 }

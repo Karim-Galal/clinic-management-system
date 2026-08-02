@@ -1,0 +1,28 @@
+@keyframes loader-logo {
+
+    0%,
+    100% {
+        transform: scale(.96);
+        opacity: .82;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+@keyframes loader-dot {
+
+    0%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-6px);
+    }
+
+}

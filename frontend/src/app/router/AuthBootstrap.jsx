@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import FullScreenLoader from "@/shared/components/FullScreenLoader";
 
 import useAuthStore from "@/features/auth/store/authStore";
 
@@ -15,7 +16,8 @@ function AuthBootstrap({ children }) {
     }, []);
 
     if (!initialized) {
-        return null;
+        // return null;
+        return <FullScreenLoader />;
     }
 
     return children;

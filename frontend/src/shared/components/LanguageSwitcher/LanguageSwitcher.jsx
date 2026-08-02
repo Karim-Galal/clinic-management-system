@@ -1,20 +1,24 @@
 import { HiOutlineLanguage } from "react-icons/hi2";
 import { useTranslation } from "react-i18next";
 
+import useLanguageStore from "@/app/store/languageStore";
+
+
 function LanguageSwitcher() {
 
     const { i18n } = useTranslation();
 
-    const changeLanguage = (lang) => {
+    const {
+        setLanguage,
+    } = useLanguageStore();
 
-        i18n.changeLanguage(lang);
 
-        document.documentElement.lang = lang;
+    const changeLanguage = (language) => {
 
-        document.documentElement.dir =
-            lang === "ar"
-                ? "rtl"
-                : "ltr";
+
+        i18n.changeLanguage(language);
+        
+        setLanguage(language);
     };
 
     return (

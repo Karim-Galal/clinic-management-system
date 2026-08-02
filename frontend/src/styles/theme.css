@@ -80,6 +80,10 @@
     
     --color-sidebar-active: var(--sidebar-active);
     --color-sidebar-active-foreground: var(--sidebar-active-foreground);
+    
+    --background-image-app: var(--gradient-app);
+
+
 
   /* ==================================================
     Radius
@@ -114,6 +118,8 @@
     --duration-normal: 200ms;
     --duration-slow: 300ms;
 
+    --animate-loader-logo: loader-logo 2.2s ease-in-out infinite;
+    --animate-loader-dot: loader-dot 1.2s ease-in-out infinite;
 
   /* ==================================================
     Z-index
@@ -192,6 +198,12 @@
 
     --sidebar-active: var(--color-primary-100);
     --sidebar-active-foreground: var(--color-primary-700);
+
+    --gradient-app: linear-gradient(
+        180deg,
+        #FFFFFF 0%,
+        #F5F7F8 100%
+    );
 }
 
 /*==================================================
@@ -240,4 +252,10 @@
 
     --sidebar-active: #0F4D43;
     --sidebar-active-foreground: #7FF3D1;
+
+    --gradient-app: linear-gradient(
+        180deg,
+        #003126 0%,
+        #00271E 100%
+    ); 
 }

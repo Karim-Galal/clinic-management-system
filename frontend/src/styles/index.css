@@ -17,6 +17,7 @@
 @import "./components/spinner.css";
 @import "./components/container.css";
 /* --- */
+@import "./animations.css";
 @import "./utilities.css";
 @import "./typography.css";
 

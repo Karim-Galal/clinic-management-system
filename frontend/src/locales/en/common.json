@@ -3,11 +3,20 @@
   "cancel": "Cancel",
   "edit": "Edit",
   "delete": "Delete",
+  
   "search": "Search",
   "loading": "Loading...",
   "yes": "Yes",
   "no": "No",
 
+  "confirm": "Confirm",
+  "close": "Close",
+  "create": "Create",
+
   "app_name": "ClinicFlow",
   "app_description": "Clinic Management System"
+
+  
+    
+  
 }

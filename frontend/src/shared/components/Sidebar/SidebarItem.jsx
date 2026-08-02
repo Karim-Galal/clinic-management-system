@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import {clsx} from "clsx";
 
-function SidebarItem({ item }) {
+function SidebarItem({ item ,collapsed  }) {
+
 
     const { t } = useTranslation();
 
@@ -13,10 +15,8 @@ function SidebarItem({ item }) {
             to={item.to}
             className={({ isActive }) => `
                 flex items-center gap-3 rounded-xl px-3 py-2.5 transition-all
+                
                 ${
-                    // isActive
-                    //     ? "bg-primary-100 text-primary-700"
-                    //     : "text-muted-foreground hover:bg-muted hover:text-surface-foreground"
 
                     isActive
                         ? "bg-sidebar-active text-sidebar-active-foreground"
@@ -25,13 +25,18 @@ function SidebarItem({ item }) {
             `}
         >
 
-            <Icon className="size-5 shrink-0" />
-
-            <span className="font-medium">
-
+            <Icon className="size-5 shrink-0" title={t(item.label)} />
+            <span
+                className={clsx(
+                    "overflow-hidden whitespace-nowrap font-medium transition-all duration-300",
+                    collapsed
+                        ? "w-0 opacity-0"
+                        : "w-auto opacity-100"
+                )}
+            >
                 {t(item.label)}
-
             </span>
+            
 
         </NavLink>
 

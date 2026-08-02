@@ -24,12 +24,6 @@ const useAuthStore = create((set, get) => {
 
         }
 
-        // Validation errors
-        // else if (error.response.status === 422) {
-
-        //     errors = error.response.data.errors ?? {};
-
-        // }
         else if (error.response.status === 422) {
 
             if (
@@ -139,18 +133,46 @@ const useAuthStore = create((set, get) => {
 
             } catch (error) {
 
-                // set(handleError(error));
-                set({
+            let message = null;
 
-                    ...handleError(error),
+            if (!navigator.onLine) {
 
-                    initialized: true,
+                message = "offline";
 
-                });
+            } else if (!error.response) {
 
-                return null;
+                message = "server_unreachable";
+
+            } else if (error.response.status === 401) {
+
+                message = "session_expired";
+
+            } else {
+
+                message = "server_error";
 
             }
+
+            set({
+
+                user: null,
+
+                isAuthenticated: false,
+
+                initialized: true,
+
+                loading: false,
+
+                errors: {},
+
+                message,
+
+                messageType: "danger",
+
+            });
+
+            return null;
+        }
 
         },
 
