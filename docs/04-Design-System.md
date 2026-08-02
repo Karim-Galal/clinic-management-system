@@ -317,4 +317,20 @@ Before creating a new component ask:
 2. Does it contain its own logic?
 3. Does it reduce complexity?
 
-If all answers are "No", keep it inside the page.
+If all answers are "No", keep it inside the page.Admin
+
+Dashboard
+
+Patients
+
+Doctors
+
+Appointments
+
+Laboratory
+
+Billing
+
+Reports
+
+Settings

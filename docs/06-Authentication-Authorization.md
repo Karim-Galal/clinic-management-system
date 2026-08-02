@@ -479,3 +479,27 @@ Laravel
 ```
 
 This consistency makes the project easier to maintain, easier to extend, and closer to the architecture used in professional Laravel + React applications.
+Admin
+    Responsibilities
+    Permissions
+    Dashboard
+
+Doctor
+    Responsibilities
+    Permissions
+    Dashboard
+
+Receptionist
+    Responsibilities
+    Permissions
+    Dashboard
+
+Nurse
+
+Pharmacist
+
+Laboratory
+
+Cashier
+
+Patient
